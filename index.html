@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!-- CARTAO-NDF v2 | skill: construtor-de-pagina-lp | data: 2026-09-29
+NEGOCIO: Curso "Claude Code para Profissionais Liberais" | OFERTA: curso + templates + mentoria (preco a definir) | TIPO: curso | OBJETIVO: capturar (lista de espera, sem preco definido ainda)
+CTA-DESTINO: rascunho (href="#") — falta link real de WhatsApp/formulario
+GRANDE CRENCA: profissional liberal pode operar sua propria IA de bastidor sem depender de agencia/equipe | HEADLINE: "Sua operação do dia a dia, rodando com IA — sem depender de ninguém"
+MOLDE: Gelo | PALETA: canvas #F4F7FB / navy #0D1626 / accent #2563EB / cyan #06B6D4 | TIPO: Clash Display + Space Grotesk
+PROVA USADA: nenhuma prova externa disponivel ainda — hierarquia honesta usando metodologia/transparencia do "como foi construido" | PENDENTE: link real de inscricao, preco, primeiros depoimentos, foto do instrutor
+PROXIMA SKILL: maquina-de-anuncios
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code para Profissionais Liberais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#F4F7FB; --surface:#EAF0F7; --ink:#0B1422; --slate:#334358;
+    --silver:#5F7189; --navy:#0D1626; --accent:#2563EB; --cyan:#06B6D4;
+    --hairline:#D7E1EC;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Space Grotesk', system-ui, sans-serif;
+    background:var(--canvas); color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Clash Display', 'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em;}
+  img,svg{max-width:100%; display:block;}
+  a{text-decoration:none; color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  @media (max-width:640px){ section{padding:56px 0;} }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:14px 28px; border-radius:980px; font-weight:600; font-size:16px;
+    background:var(--accent); color:#fff; border:none; cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); box-shadow:0 8px 24px rgba(37,99,235,.28); }
+  .btn.ghost{
+    background:transparent; color:var(--navy); border:1.5px solid var(--hairline);
+  }
+
+  .chip{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:7px 14px; border-radius:980px; background:var(--surface);
+    color:var(--slate); font-size:14px; font-weight:500;
+    border:1px solid var(--hairline);
+  }
+
+  /* HERO */
+  .hero{ padding-top:72px; }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+  .chips-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:22px; }
+  .hero h1{ font-size:56px; line-height:1.06; margin-bottom:20px; color:var(--navy); }
+  @media (max-width:640px){ .hero h1{ font-size:36px; } }
+  .hero p.sub{ font-size:19px; color:var(--slate); max-width:46ch; margin-bottom:30px; line-height:1.5; }
+  .hero-cta-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .hero-note{ font-size:13px; color:var(--silver); margin-top:14px; }
+
+  .hero-visual{
+    background:var(--navy); border-radius:24px; padding:28px;
+    box-shadow:0 24px 60px rgba(13,22,38,.18);
+  }
+  .hero-visual .bar{ display:flex; gap:6px; margin-bottom:18px; }
+  .hero-visual .dot{ width:10px; height:10px; border-radius:50%; background:#334358; }
+  .hero-visual .line{
+    font-family:'Space Grotesk', monospace; font-size:14px; color:#8FE3F0;
+    background:#0A101C; border-radius:12px; padding:16px; line-height:1.7;
+  }
+  .hero-visual .line .cmd{ color:#5EEAD4; }
+  .hero-visual .line .out{ color:#C8D2E0; }
+
+  /* SECTION HEAD */
+  .section-head{ max-width:640px; margin-bottom:44px; }
+  .section-head .eyebrow{ color:var(--accent); font-weight:600; font-size:14px; margin-bottom:10px; display:block; }
+  .section-head h2{ font-size:36px; color:var(--navy); line-height:1.15; }
+  @media (max-width:640px){ .section-head h2{ font-size:28px; } }
+
+  /* MODULOS BENTO */
+  .bento{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:900px){ .bento{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .bento{ grid-template-columns:1fr; } }
+  .card{
+    background:var(--surface); border:1px solid var(--hairline); border-radius:18px;
+    padding:24px; display:flex; flex-direction:column; gap:10px;
+  }
+  .card .num{ font-family:'Clash Display',sans-serif; font-size:14px; color:var(--accent); font-weight:600; }
+  .card h3{ font-size:18px; color:var(--navy); }
+  .card p{ font-size:14.5px; color:var(--slate); line-height:1.5; }
+  .card.highlight{ background:var(--navy); border-color:var(--navy); }
+  .card.highlight .num{ color:var(--cyan); }
+  .card.highlight h3, .card.highlight p{ color:#EAF0F7; }
+
+  /* TRILHAS */
+  .trilhas{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+  @media (max-width:900px){ .trilhas{ grid-template-columns:1fr; } }
+  .trilha{
+    border:1px solid var(--hairline); border-radius:18px; padding:22px; background:#fff;
+  }
+  .trilha h3{ font-size:16px; color:var(--navy); margin-bottom:8px; }
+  .trilha p{ font-size:14px; color:var(--slate); line-height:1.5; }
+
+  /* PROVA */
+  .prova-box{
+    background:var(--navy); border-radius:24px; padding:40px; color:#fff;
+    display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center;
+  }
+  @media (max-width:800px){ .prova-box{ grid-template-columns:1fr; } }
+  .prova-box h3{ font-size:24px; margin-bottom:12px; }
+  .prova-box p{ color:#C8D2E0; font-size:15px; line-height:1.6; }
+  .prova-list{ display:flex; flex-direction:column; gap:14px; }
+  .prova-item{ display:flex; gap:12px; align-items:flex-start; }
+  .prova-item .mark{ color:var(--cyan); font-weight:600; }
+  .prova-item span.txt{ font-size:14.5px; color:#EAF0F7; }
+
+  /* OFERTA */
+  .oferta-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media (max-width:900px){ .oferta-grid{ grid-template-columns:1fr; } }
+  .plano{
+    border:1.5px solid var(--hairline); border-radius:20px; padding:28px; background:#fff;
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .plano.destaque{ border-color:var(--accent); box-shadow:0 12px 32px rgba(37,99,235,.14); position:relative; }
+  .plano .tag{ position:absolute; top:-12px; left:24px; background:var(--accent); color:#fff; font-size:12px; font-weight:600; padding:5px 12px; border-radius:980px; }
+  .plano h3{ font-size:19px; color:var(--navy); }
+  .plano .preco{ font-size:15px; color:var(--silver); }
+  .plano ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .plano li{ font-size:14px; color:var(--slate); padding-left:20px; position:relative; }
+  .plano li::before{ content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:600; }
+
+  /* FAQ */
+  .faq-item{ border-bottom:1px solid var(--hairline); padding:20px 0; }
+  .faq-item h3{ font-size:16px; color:var(--navy); margin-bottom:8px; font-family:'Space Grotesk',sans-serif; font-weight:600; }
+  .faq-item p{ font-size:14.5px; color:var(--slate); line-height:1.6; }
+
+  /* CTA FINAL */
+  .cta-final{
+    background:var(--navy); border-radius:28px; padding:64px 40px; text-align:center;
+  }
+  .cta-final h2{ color:#fff; font-size:34px; max-width:560px; margin:0 auto 14px; line-height:1.2; }
+  @media (max-width:640px){ .cta-final h2{ font-size:26px; } }
+  .cta-final p{ color:#AEC0D6; font-size:15px; margin-bottom:28px; }
+
+  footer{ padding:32px 0; text-align:center; }
+  footer p{ font-size:13px; color:var(--silver); }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="chips-row">
+        <span class="chip">Para profissionais liberais</span>
+        <span class="chip">Sem exigir programação</span>
+      </div>
+      <h1>Sua operação do dia a dia, rodando com IA — sem depender de ninguém</h1>
+      <p class="sub">Aprenda a instalar e operar o Claude Code para cuidar de agenda, atendimento, financeiro e redes sociais do seu consultório ou negócio.</p>
+      <div class="hero-cta-row">
+        <a href="#lista" class="btn">Entrar na lista de espera</a>
+        <a href="#modulos" class="btn ghost">Ver o que você vai aprender</a>
+      </div>
+      <p class="hero-note">Turma em preparação — condição especial para quem entrar na lista.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="line">
+        <div><span class="cmd">&gt; </span>confirmar próximas sessões da semana</div>
+        <div class="out">✓ 6 lembretes enviados por WhatsApp</div>
+        <div class="out">✓ 2 remarcações ajustadas na agenda</div>
+        <br>
+        <div><span class="cmd">&gt; </span>gerar relatório financeiro do mês</div>
+        <div class="out">✓ resumo pronto — aguardando sua confirmação</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="modulos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">O QUE VOCÊ LEVA</span>
+      <h2>9 módulos, do zero até sua operação rodando</h2>
+    </div>
+    <div class="bento">
+      <div class="card"><span class="num">00</span><h3>Instalação e Primeiros Passos</h3><p>Instale o Claude Code e faça sua primeira automação em 10 minutos.</p></div>
+      <div class="card"><span class="num">01</span><h3>Segurança e LGPD</h3><p>O que a IA pode e não pode fazer sozinha com dados de clientes.</p></div>
+      <div class="card"><span class="num">02</span><h3>Agenda e Atendimento</h3><p>Confirmações, remarcações e lembretes automáticos.</p></div>
+      <div class="card"><span class="num">03</span><h3>Comunicação</h3><p>Respostas automáticas com triagem para o que precisa de você.</p></div>
+      <div class="card"><span class="num">04</span><h3>Pagamentos e Financeiro</h3><p>Cobrança, recibos e relatório — sempre com sua confirmação.</p></div>
+      <div class="card"><span class="num">05</span><h3>Presença e Redes Sociais</h3><p>Conteúdo a partir da sua expertise, aprovado antes de publicar.</p></div>
+      <div class="card"><span class="num">06</span><h3>Sua Operação Integrada</h3><p>Todos os módulos conectados num fluxo único.</p></div>
+      <div class="card"><span class="num">07</span><h3>Trilha de Especialização</h3><p>Escolha sua área: Clínica, Jurídico/Contábil ou Consultoria.</p></div>
+      <div class="card highlight"><span class="num">08</span><h3>Como Foi Construído</h3><p>O making-of técnico, prompt por prompt, para você continuar evoluindo sozinho.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">TRILHA DE ESPECIALIZAÇÃO</span>
+      <h2>Escolha o caminho do seu negócio</h2>
+    </div>
+    <div class="trilhas">
+      <div class="trilha"><h3>Clínica / Saúde</h3><p>Psicólogos, nutricionistas e dentistas: sigilo profissional, triagem de pacientes e ética na automação de atendimento.</p></div>
+      <div class="trilha"><h3>Jurídico / Contábil</h3><p>Prazos, documentos e confidencialidade aplicados ao dia a dia do escritório.</p></div>
+      <div class="trilha"><h3>Consultoria / Serviços</h3><p>Propostas, contratos e follow-up automatizado com seus clientes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="prova-box">
+      <div>
+        <h3>Ainda não temos turma formada — e isso é dito de propósito</h3>
+        <p>Este curso está sendo construído agora. Em vez de inventar depoimento, preferimos mostrar exatamente como cada automação é feita, para você decidir com informação real.</p>
+      </div>
+      <div class="prova-list">
+        <div class="prova-item"><span class="mark">✓</span><span class="txt">Metodologia baseada em uso real do Claude Code em pequenos negócios</span></div>
+        <div class="prova-item"><span class="mark">✓</span><span class="txt">Módulo dedicado a mostrar o passo a passo de construção de cada automação</span></div>
+        <div class="prova-item"><span class="mark">✓</span><span class="txt">Trilhas revisadas com profissionais de cada área antes do lançamento</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lista">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">OFERTA</span>
+      <h2>Camadas de acesso — preço em definição para a turma de lançamento</h2>
+    </div>
+    <div class="oferta-grid">
+      <div class="plano">
+        <h3>Curso</h3>
+        <p class="preco">Preço a definir</p>
+        <ul>
+          <li>9 módulos completos</li>
+          <li>Aulas curtas + prática guiada</li>
+          <li>Acesso às trilhas de especialização</li>
+        </ul>
+        <a href="#" class="btn ghost">Entrar na lista de espera</a>
+      </div>
+      <div class="plano destaque">
+        <span class="tag">Recomendado</span>
+        <h3>Curso + Templates</h3>
+        <p class="preco">Preço a definir</p>
+        <ul>
+          <li>Tudo do plano Curso</li>
+          <li>Templates prontos por módulo</li>
+          <li>Checklist de segurança e LGPD</li>
+        </ul>
+        <a href="#" class="btn">Entrar na lista de espera</a>
+      </div>
+      <div class="plano">
+        <h3>Curso + Mentoria</h3>
+        <p class="preco">Preço a definir</p>
+        <ul>
+          <li>Tudo do plano anterior</li>
+          <li>Mentoria de implementação</li>
+          <li>Revisão da sua operação</li>
+        </ul>
+        <a href="#" class="btn ghost">Entrar na lista de espera</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head">
+      <span class="eyebrow">PERGUNTAS FREQUENTES</span>
+      <h2>Antes de entrar na lista</h2>
+    </div>
+    <div class="faqs">
+      <div class="faq-item"><h3>Preciso saber programar?</h3><p>Não. O curso ensina a instalar e operar o Claude Code passo a passo, sem exigir experiência técnica anterior.</p></div>
+      <div class="faq-item"><h3>Serve só para psicólogos?</h3><p>Não. O curso é para qualquer profissional liberal ou pequeno negócio. Há uma trilha de especialização para quem atua em clínica/saúde.</p></div>
+      <div class="faq-item"><h3>É seguro usar IA com dados de clientes?</h3><p>O módulo 1 é dedicado a isso: o que pode e não pode ser automatizado, e como manter conformidade com a LGPD.</p></div>
+      <div class="faq-item"><h3>Quando a turma começa?</h3><p>Ainda em preparação. Quem entrar na lista de espera é avisado em primeira mão, com condição especial de lançamento.</p></div>
+      <div class="faq-item"><h3>Qual o investimento?</h3><p>O preço está sendo definido junto com a estrutura final da turma de lançamento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-final">
+      <h2>Entre na lista de espera e seja avisado quando a turma abrir</h2>
+      <p>Sem compromisso. Você só recebe novidades sobre o lançamento.</p>
+      <a href="#" class="btn">Quero entrar na lista</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 — Claude Code para Profissionais Liberais.</p>
+  </div>
+</footer>
+
+</body>
+</html>
